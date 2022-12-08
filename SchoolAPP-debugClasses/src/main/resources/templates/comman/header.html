@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:fragment="header">
+
+
+    <title>Student Management</title>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div th:fragment="navbar">
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Spring Boot System</h1>
+    <p>WebDevelopment App</p>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class = "container-fluid">
+        <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon/bar"></span>
+            <span class="icon/bar"></span>
+            <span class="icon/bar"></span>
+        </button>
+    <a class="navbar-brand" href="#">Student Management Platform</a>
+    </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{'/index'}">Home</a></li>
+                <li><a  th:href="@{'/course'}">Course</a></li>
+                <li><a  th:href="@{'/student'}">Student</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+</div>

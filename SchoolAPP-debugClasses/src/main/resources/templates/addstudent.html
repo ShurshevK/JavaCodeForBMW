@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Student</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/Student/save}" th:object="${student}" method="post">
+
+
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Student Name</label>
+                    <td>
+                        <input type="hidden" th:field="*{studentId}" />
+                        <input type="text" th:field="*{studentName}" class="form-control" placeholder="Student Name" />
+
+                    </td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Age</label>
+                    <td>
+
+                        <input type="text" th:field="*{age}" class="form-control" placeholder="Age" />
+
+                    </td>
+                </tr>
+                <div alight="left">
+                    <tr>
+                        <label class="form-label" >Date of Birth</label>
+                        <td>
+
+                            <input type="text" th:field="*{dob}" class="form-control" placeholder="Date of Birth" />
+
+                        </td>
+                    </tr>
+                </div>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Phone Number</label>
+                    <td>
+
+                        <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="Phone Number" />
+
+                    </td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Email</label>
+                    <td>
+
+                        <input type="text" th:field="*{Email}" class="form-control" placeholder="Email" />
+                    </td>
+                </tr>
+            </div>
+
+
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Course</label>
+
+                    <td>
+                        <select name="course" id="course" class="form-control">
+                            <option th:each="course: ${listcourse}"
+                                    th:value="${course.id}"
+                                    th:text="${course.coursename}">
+
+                            </option>
+
+                        </select>
+
+                    </td>
+                </tr>
+            </div>
+
+            <br>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+
+        </form>
+    </div>
+</body>
+</html>
